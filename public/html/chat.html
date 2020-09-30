@@ -8,10 +8,24 @@
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   </head>
   <body>
+    <style>
+      #leftbottom{
+        position: absolute;
+        right: 0px;
+        width: 300px;
+        border: 3px;
+        padding: 10px;
+}
+    </style>
     <ul id="messages"></ul>
     <form action="">
       <div class="form-group">
-        <div class="fixed-bottom"><input autocomplete="off" type="text" class="form-control" id="m" placeholder="type A message"><button  type="submit" class="btn btn-dark">Dark</button></div>
+        <div class="fixed-bottom">
+          
+            <input autocomplete="off" type="text" class="form-control" id="m" placeholder="type A message"><button id="leftbottom"  type="submit" class="btn btn-dark">Dark</button>
+          
+          
+        </div>
         
       </div>
       <!--<input id="m" autocomplete="off" /><button>Send</button> -->
