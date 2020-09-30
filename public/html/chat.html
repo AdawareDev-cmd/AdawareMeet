@@ -11,9 +11,10 @@
     <ul id="messages"></ul>
     <form action="">
       <div class="form-group">
-        <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <div class="fixed-bottom"><input autocomplete="off" type="text" class="form-control" id="m" placeholder="type A message"><button  type="submit" class="btn btn-dark">Dark</button></div>
+        
       </div>
+      <!--<input id="m" autocomplete="off" /><button>Send</button> -->
     </form>
     <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
