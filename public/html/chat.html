@@ -2,29 +2,44 @@
 <html>
   <head>
     <title>Socket.IO chat</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   </head>
   <body>
-    <style>
-      #leftbottom{
-        position: absolute;
-        right: 0px;
-        width: 300px;
-        border: 3px;
-        padding: 10px;
-}
-    </style>
+    <p id="message" class="font-weight-bolder">Chat</p>
     <ul id="messages"></ul>
     <form action="">
+      <style>
+        #m{
+          width: 4000px;
+          padding: 0%;
+          
+        }
+      </style>
       <div class="form-group">
         <div class="fixed-bottom">
-          
-            <input autocomplete="off" type="text" class="form-control" id="m" placeholder="type A message"><button id="leftbottom"  type="submit" class="btn btn-dark">Dark</button>
-          
-          
+          <form>
+            <div class="row">
+              <div class="col">
+                <input autocomplete="off" type="text" class="form-control modal-xl" id="m" placeholder="type A message">
+              </div>
+              <div class="col">
+                <button id="leftbottom" type="submit" class="btn btn-dark float-right">Send</button>
+                
+              </div>
+            </div>
+          </form>
+
+            
         </div>
         
       </div>
@@ -37,11 +52,12 @@
         var socket = io();
         $('form').submit(function(){
           socket.emit('chat message', $('#m').val());
+          console.log('chat message', $('#m').val());
           $('#m').val('');
           return false;
         });
         socket.on('chat message', function(msg){
-          $('#messages').append($('<li>').text(msg));
+          $('#messages').append($('<p class="font-weight-bolder" >').text(msg));
           window.scrollTo(0, document.body.scrollHeight);
         });
       });
