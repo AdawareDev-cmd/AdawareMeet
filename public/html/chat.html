@@ -58,8 +58,8 @@
           
         });
         socket.on('chat message', function(msg){
-          $('#messages').append($('<p class="font-weight-bolder" >').text(msg));
-          window.scrollTo(0, document.body.scrollHeight);
+            $('#messages').append(localStorage.getItem(mail)+ $('<li>').text(msg));
+            window.scrollTo(0, document.body.scrollHeight);
         });
       });
     </script>
