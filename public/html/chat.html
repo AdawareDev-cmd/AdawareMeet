@@ -55,6 +55,7 @@
           console.log('chat message', $('#m').val());
           $('#m').val('');
           return false;
+          
         });
         socket.on('chat message', function(msg){
           $('#messages').append($('<p class="font-weight-bolder" >').text(msg));
