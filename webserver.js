@@ -8,26 +8,6 @@ const log = new logger.Logger();
 
 
 var utenti = [
-  {
-    "mail": "traba@is.tk",
-    "password": "123"
-
-  },
-  {
-    "mail": "adaware@is.tk",
-    "password": "123"
-
-  },
-  {
-    "mail": "lorix@is.tk",
-    "password": "123"
-
-  },
-  {
-    "mail": "sommo@encelo.nc",
-    "password": "123"
-
-  }
 
 ];
 
