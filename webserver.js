@@ -8,7 +8,8 @@ const log = new logger.Logger();
 
 
 var utenti = [
-
+  //json
+  
 ];
 
 app.get('/dologin', async function (req, res) {
