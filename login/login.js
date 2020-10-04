@@ -4,7 +4,7 @@ $(function () {
       var d = new Date();  
      var mail = $('#inputmail').val();
      var password =$('#inputpassword').val();  
-    localStorage.setItem("mail", mail.split("@")[0])
+    
 
 
         var xhttp = new XMLHttpRequest();
@@ -12,7 +12,7 @@ $(function () {
           if (this.readyState == 4 ) {
               if( this.status == 200){
                 
-                localStorage.setItem("mail",mail.split("@")[0])
+                localStorage.setItem("user",mail.split("@")[0])
                 location.href = "/textchat";
 
 

@@ -58,7 +58,7 @@
           
         });
         socket.on('chat message', function(msg){
-            $('#messages').append(localStorage.getItem(mail)+ $('<li>').text(msg));
+            $('#messages').append(localStorage.getItem(user)+ $('<li>').text(msg));
             window.scrollTo(0, document.body.scrollHeight);
         });
       });
